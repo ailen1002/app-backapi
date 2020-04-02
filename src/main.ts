@@ -7,7 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule,{
     logger: ['error','warn']
   });
-  
+  const globalPrefix = 'api/v1';
+  const port = process.env.port || 3100;
   app.enableCors();
   app.use(helmet());
 
@@ -18,12 +19,9 @@ async function bootstrap() {
     .build();
   
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api-doc', app, document);
+  SwaggerModule.setup(`${globalPrefix}/docs`, app, document);
 
-  const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
-  const port = process.env.port || 3100;
-
   await app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}/${globalPrefix}`)
   });
