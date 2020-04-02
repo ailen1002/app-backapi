@@ -1,6 +1,7 @@
 import * as helmet from 'helmet';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { Logger } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
@@ -23,7 +24,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix(globalPrefix);
   await app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}/${globalPrefix}`)
+    Logger.log(`Listening at http://localhost:${port}/${globalPrefix}`)
   });
 }
 bootstrap();

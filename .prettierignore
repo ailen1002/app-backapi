@@ -1,0 +1,16 @@
+package.json
+package-lock.json
+
+ionic.config.json
+config.xml
+build.json
+
+hooks/**
+plugins/**
+scripts/**
+
+src/index.html
+src/global.scss
+
+README.md
+angular.json
