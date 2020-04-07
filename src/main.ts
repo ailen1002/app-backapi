@@ -18,7 +18,7 @@ async function bootstrap() {
     .setDescription('a test API')
     .setVersion('V1.0')
     .build();
-  
+
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup(`${globalPrefix}/docs`, app, document);
 

@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CatsController } from './cats/cats.controller';
-import { CatsService } from './cats/cats.service';
 import { ConfigService } from './config/config.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { AdminModule } from './controllers/admin/admin.module';
+import { FrontUiModule } from './controllers/front-ui/front-ui.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController, CatsController],
-  providers: [AppService, CatsService, ConfigService],
+  imports: [TypeOrmModule.forRoot(), AdminModule, FrontUiModule],
+  controllers: [AppController],
+  providers: [AppService, ConfigService],
 })
 export class AppModule {}
-  
