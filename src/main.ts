@@ -1,3 +1,4 @@
+require('dotenv').config();
 import * as helmet from 'helmet';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -9,7 +10,7 @@ async function bootstrap() {
     logger: ['error','warn']
   });
   const globalPrefix = 'api/v1';
-  const port = process.env.port || 3100;
+  const port = process.env.PORT || 3000;
   app.enableCors();
   app.use(helmet());
 
