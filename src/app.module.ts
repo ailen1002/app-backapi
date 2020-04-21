@@ -1,14 +1,24 @@
 import { Module } from '@nestjs/common';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CatsController } from './cats/cats.controller';
-import { CatsService } from './cats/cats.service';
 import { ConfigService } from './config/config.service';
+import { CatsModule } from './cats/cats.module';
+import { ErrorsInterceptor } from './common/errors.interceptor';
 
 @Module({
-  imports: [],
-  controllers: [AppController, CatsController],
-  providers: [AppService, CatsService, ConfigService],
+  imports: [TypeOrmModule.forRoot(), CatsModule],
+  controllers: [AppController],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: ErrorsInterceptor
+    },
+    AppService,
+    ConfigService
+  ],
+  exports: [],
 })
 export class AppModule {}
-  
