@@ -18,13 +18,13 @@ async function bootstrap() {
     .setDescription('a test API')
     .setVersion('V1.0')
     .build();
-  
+
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup(`${globalPrefix}/docs`, app, document);
 
   app.setGlobalPrefix(globalPrefix);
   await app.listen(port, () => {
-    Logger.log(`Listening at http://localhost:${port}/${globalPrefix}`)
+    Logger.log(`Listening at http://localhost:${port}/${globalPrefix}`, 'bootstrap')
   });
 }
 bootstrap();

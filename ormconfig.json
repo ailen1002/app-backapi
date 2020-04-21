@@ -6,7 +6,7 @@
   "password": "Welcome01",
   "database": "test",
   "entities": [
-    "dist/**/**.entity{.ts,.js}"
+    "src/**/**.entity{.ts,.js}"
   ],
   "synchronize": true,
   "logging": true
