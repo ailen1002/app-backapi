@@ -4,7 +4,7 @@
   "port": 5432,
   "username": "postgres",
   "password": "Welcome01",
-  "database": "test",
+  "database": "postgres",
   "entities": [
     "src/**/**.entity{.ts,.js}"
   ],
