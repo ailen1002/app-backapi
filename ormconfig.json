@@ -6,7 +6,7 @@
   "password": "Welcome01",
   "database": "postgres",
   "entities": [
-    "src/**/**.entity{.ts,.js}"
+    "src/**/*.entity{.ts,.js}"
   ],
   "synchronize": true,
   "logging": true

@@ -8,8 +8,9 @@ export class CatsService {
   constructor(@InjectRepository(Cats) private readonly catRepo: Repository<Cats>){}
 
   async creatCat(cat: Cats): Promise<Cats> {
+    // this.catRepo.create(cat);
     delete cat.id;
-    return this.catRepo.save(this.catRepo.create());
+    return this.catRepo.save(this.catRepo.create(cat));
   }
 
   async deleteCat(id: number): Promise<void> {
