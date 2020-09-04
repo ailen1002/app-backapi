@@ -5,9 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigService } from './config/config.service';
-import { CatsModule } from './cats/cats.module';
+import { CatsModule } from './modules/cats/cats.module';
 import { ErrorsInterceptor } from './common/errors.interceptor';
-import { PokemonModule } from './pokemon/pokemon.module';
+import { PokemonModule } from './modules/pokemon/pokemon.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot(), CatsModule, PokemonModule],
