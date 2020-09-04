@@ -13,9 +13,7 @@ export class Cats {
   /**
    * 昵称
    */
-  @Column({
-    comment: '昵称'
-  })
+  @Column({comment: '昵称'})
   nickname: string;
 
   /**
