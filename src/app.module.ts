@@ -19,6 +19,6 @@ import { ErrorsInterceptor } from './common/errors.interceptor';
     AppService,
     ConfigService
   ],
-  exports: [],
+  exports: []
 })
 export class AppModule {}

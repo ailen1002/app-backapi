@@ -6,8 +6,8 @@ import { Logger } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule,{
-    logger: ['error','warn']
+  const app = await NestFactory.create(AppModule, {
+    logger: ['error', 'warn']
   });
   const globalPrefix = 'api/v1';
   const port = process.env.PORT || 3000;
@@ -25,7 +25,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix(globalPrefix);
   await app.listen(port, () => {
-    Logger.log(`Listening at http://localhost:${port}/${globalPrefix}`, 'bootstrap')
+    Logger.log(`Listening at http://localhost:${port}/${globalPrefix}`, 'bootstrap');
   });
 }
 bootstrap();

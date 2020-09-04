@@ -2,8 +2,8 @@
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
-  "username": "postgres",
-  "password": "Welcome01",
+  "username": "admin",
+  "password": "admin12345",
   "database": "postgres",
   "entities": [
     "src/**/**.entity{.ts,.js}"

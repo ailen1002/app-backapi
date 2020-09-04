@@ -6,7 +6,7 @@ export class Cats {
    * 自增主键
    */
   @PrimaryGeneratedColumn({
-      comment: '自增ID'
+    comment: '自增ID'
   })
   id: number;
 
@@ -14,7 +14,7 @@ export class Cats {
    * 昵称
    */
   @Column({
-      comment: '昵称'
+    comment: '昵称'
   })
   nickname: string;
 
@@ -22,7 +22,7 @@ export class Cats {
    * 品种
    */
   @Column({
-      comment: '品种'
+    comment: '品种'
   })
   species: string;
 }

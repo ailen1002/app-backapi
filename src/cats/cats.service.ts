@@ -5,7 +5,7 @@ import { Cats } from './cats.entity';
 
 @Injectable()
 export class CatsService {
-  constructor(@InjectRepository(Cats) private readonly catRepo: Repository<Cats>){}
+  constructor(@InjectRepository(Cats) private readonly catRepo: Repository<Cats>) {}
 
   async creatCat(cat: Cats): Promise<Cats> {
     delete cat.id;
@@ -16,7 +16,7 @@ export class CatsService {
     await this.findOneById(id);
   }
 
-  async updateCat(id: number, cat: Cats): Promise<void>{
+  async updateCat(id: number, cat: Cats): Promise<void> {
     const existCat = await this.findOneById(id);
     existCat.nickname = cat && cat.nickname ? cat.nickname : existCat.nickname;
     existCat.species = cat && cat.species ? cat.species : existCat.species;
@@ -29,9 +29,9 @@ export class CatsService {
 
   private async findOneById(id: number): Promise<Cats> {
     const catInfo = await this.catRepo.findOne(id);
-    if(!catInfo) {
+    if (!catInfo) {
       throw new HttpException(`制定 id=${id} 的猫猫不存在`, 404);
     }
-    return catInfo
+    return catInfo;
   }
 }

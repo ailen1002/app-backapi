@@ -4,5 +4,5 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 @Injectable()
 export class ConfigService {
-    private readonly envConfig: Record<string, string>;
+  private readonly envConfig: Record<string, string>;
 }
