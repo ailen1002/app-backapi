@@ -4,21 +4,20 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigService } from './config/config.service';
 import { CatsModule } from './modules/cats/cats.module';
 import { ErrorsInterceptor } from './common/errors.interceptor';
 import { PokemonModule } from './modules/pokemon/pokemon.module';
+import { ConfigModule } from './config/config.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), CatsModule, PokemonModule],
+  imports: [TypeOrmModule.forRoot(), CatsModule, PokemonModule, ConfigModule],
   controllers: [AppController],
   providers: [
     {
       provide: APP_INTERCEPTOR,
       useClass: ErrorsInterceptor
     },
-    AppService,
-    ConfigService
+    AppService
   ],
   exports: []
 })
